@@ -5,6 +5,9 @@ include_directories("${ZeroMQ_SOURCE_DIR}/include")
 
 AUX_SOURCE_DIRECTORY(./ SRC_LIST)
 AUX_SOURCE_DIRECTORY(../public/src SRC_LIST)
+AUX_SOURCE_DIRECTORY(./server SRC_SERVER)
+AUX_SOURCE_DIRECTORY(./client SRC_CLIENT)
+
 AUX_SOURCE_DIRECTORY(../public/src/timer SRC_LIST)
 SET(EXECUTABLE_OUTPUT_PATH ./bin)
 
@@ -30,6 +33,6 @@ LINK_DIRECTORIES(
 	../../public/lib/ubuntu
 )
 
-ADD_EXECUTABLE(demo ${SRC_LIST} ys_decoder.cpp ys_decoder.h decoder_base.h zmq_ystech_msg_dispatcher.h)
+ADD_EXECUTABLE(server ${SRC_LIST} ${SRC_SERVER})
 
-TARGET_LINK_LIBRARIES(demo ${RT_LIBRARY} m libzmq pthread tinyxml2 dl)
+TARGET_LINK_LIBRARIES(server ${RT_LIBRARY} m libzmq pthread tinyxml2 dl)

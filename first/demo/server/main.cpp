@@ -12,7 +12,7 @@
  */
 
 #include <cstdlib>
-#include "application.h"
+#include "../application.h"
 #include "update_thread.h"
 using namespace std;
 

@@ -4,7 +4,7 @@
 
 #ifndef DEMO_YS_DECODER_H
 #define DEMO_YS_DECODER_H
-#include "decoder_base.h"
+#include "../decoder_base.h"
 
 // 与总线通讯的协议包头
 
